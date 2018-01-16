@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+    <db>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://192.168.100.22:3306/smart-learn"/>
+        <property name="username" value="root"/>
+        <property name="password" value="mysql123"/>
+    </db>
+    <needEdit>
+        <!--文件输出路径 D:\ideaspace\jusfoun-->
+        <property name="outDir" value="D:\ideaspace\jusfoun\jxsd"/>
+        <!--作者-->
+        <property name="author" value="wdx"/>
+        <property name="basePkg" value="com.jusfoun.jxsd"/>
+
+        <!--只支持单表表名-->
+        <property name="table" value="tb_user_point"/>
+        <!-- eg:CityBean.java 就填 City 驼峰-->
+        <property name="model" value="UserPoint"/>
+        <!-- 业务定义，eg:城市信息 -->
+        <property name="bizName" value="用户积分"/>
+        <!--包名-业务单元-全小写-->
+        <property name="bizUnit" value="user"/>
+    </needEdit>
+    <!--    <project>
+        &lt;!&ndash;acl consumer.xml 路径&ndash;&gt;
+        <property name="aclConsumer" value="jusfoun-acl\src\main\resources\spring\spring-consumers-%.xml"/>
+        &lt;!&ndash;bll provider.xml 路径&ndash;&gt;
+        <property name="bllProvider" value="jusfoun-bll\src\main\resources\spring\spring-providers-%.xml"/>
+        &lt;!&ndash;bll consumer.xml 路径&ndash;&gt;
+        <property name="bllConsumer" value="jusfoun-bll\src\main\resources\spring\spring-consumers-%.xml"/>
+        &lt;!&ndash;dal provider.xml 路径&ndash;&gt;
+        <property name="dalProvider" value="jusfoun-dal\src\main\resources\spring\spring-providers-%.xml"/>
+    </project>-->
+</defaults>
