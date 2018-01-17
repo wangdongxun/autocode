@@ -1,6 +1,7 @@
 package ${basePkg}.service.${bizUnit}.${model}Service;
 
 import ${basePkg}.dto.${bizUnit}.${model}Dto;
+import ${basePkg}.bean.${bizUnit}.${model}Dean;
 
 /**
 * @ClassName: ${model}Service
@@ -22,5 +23,5 @@ public interface ${model}Service {
 	/**
 	 * 列表
 	 */
-	List<${model}Dto> list(${model}Dto dto) throw Exception;
+	List<${model}Bean> list(${model}Dto dto) throw Exception;
 }

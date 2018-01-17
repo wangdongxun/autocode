@@ -53,6 +53,8 @@ public class CodeUtil
         this.root.put("bizUnit", this.bizUnit);
         this.root.put("model", this.model);
         this.root.put("bizName", this.bizName);
+        this.root.put("table", this.table);
+
 
 
         this.cfg = new Configuration();
@@ -68,7 +70,7 @@ public class CodeUtil
     {
         Template template = this.cfg.getTemplate("createController.ftl");
         String fileName = this.model + "Controller.java";
-        String savePath = "/src/main/java/"+this.basePath +this.bizUnit + "/controller/";
+        String savePath = "/src/main/java/"+this.basePath+ "controller/" +this.bizUnit + "/";
         createFile(this.root, this.outDir, savePath, fileName, template);
     }
 
@@ -76,54 +78,49 @@ public class CodeUtil
     {
         Template template = this.cfg.getTemplate("createBean.ftl");
         String fileName = this.model + "Bean.java";
-        String savePath = "/src/main/java/"+this.basePath +this.bizUnit + "/bean/";
+        String savePath = "/src/main/java/"+this.basePath+ "bean/" +this.bizUnit + "/";
         createFile(this.root, this.outDir, savePath, fileName, template);
     }
 
-    public void createInfo()
-            throws Exception
+    public void createInfo() throws Exception
     {
         Template template = this.cfg.getTemplate("createInfo.ftl");
         String fileName = this.model + "Dto.java";
-        String savePath = "/src/main/java/"+this.basePath +this.bizUnit + "/dto/";
+        String savePath = "/src/main/java/"+this.basePath+ "dto/" +this.bizUnit + "/";
         createFile(this.root, this.outDir, savePath, fileName, template);
     }
-//
-//    public void createSV()
-//            throws Exception
-//    {
-//        Template template = this.cfg.getTemplate("createSV.ftl");
-//        String fileName = this.modelName + ".java";
-//        String savePath = "/jusfoun-idl/src/main/java/com/shujia/jusfoun/idl/" + this.center + "/service/";
-//        createFile(this.root, this.project_path, savePath, fileName, template);
-//    }
-//
-//    public void createSVImpl()
-//            throws Exception
-//    {
-//        Template template = this.cfg.getTemplate("createSVImpl.ftl");
-//        String fileName = this.modelName + "Impl.java";
-//        String savePath = "/jusfoun-bll/src/main/java/com/shujia/jusfoun/bll/" + this.center + "/";
-//        createFile(this.root, this.project_path, savePath, fileName, template);
-//    }
-//
-//    public void createMapper()
-//            throws Exception
-//    {
-//        Template template = this.cfg.getTemplate("createMapper.ftl");
-//        String fileName = this.modelName + "Mapper.java";
-//        String savePath = "/jusfoun-idl/src/main/java/com/shujia/jusfoun/idl/" + this.center + "/dao/";
-//        createFile(this.root, this.project_path, savePath, fileName, template);
-//    }
-//
-//    public void createMapperXml()
-//            throws Exception
-//    {
-//        Template template = this.cfg.getTemplate("createMapperXml.ftl");
-//        String fileName = this.modelName + "Mapper.xml";
-//        String savePath = "/jusfoun-dal/src/main/resources/mappings/";
-//        createFile(this.root, this.project_path, savePath, fileName, template);
-//    }
+
+    public void createSV() throws Exception
+    {
+        Template template = this.cfg.getTemplate("createSV.ftl");
+        String fileName = this.model + "Service.java";
+        String savePath = "/src/main/java/"+this.basePath+ "service/" +this.bizUnit + "/";
+        createFile(this.root, this.outDir, savePath, fileName, template);
+    }
+
+    public void createSVImpl() throws Exception
+    {
+        Template template = this.cfg.getTemplate("createSVImpl.ftl");
+        String fileName = this.model + "ServiceImpl.java";
+        String savePath = "/src/main/java/"+this.basePath+ "service/impl/" +this.bizUnit + "/";
+        createFile(this.root, this.outDir, savePath, fileName, template);
+    }
+
+    public void createMapper() throws Exception
+    {
+        Template template = this.cfg.getTemplate("createMapper.ftl");
+        String fileName = this.model + "Mapper.java";
+        String savePath = "/src/main/java/"+this.basePath+ "dao/mapper/" +this.bizUnit + "/";
+        createFile(this.root, this.outDir, savePath, fileName, template);
+    }
+
+    public void createMapperXml() throws Exception
+    {
+        Template template = this.cfg.getTemplate("createMapperXml.ftl");
+        String fileName = this.model + "Mapper.xml";
+        String savePath = "/src/main/resources/mappings/"+this.bizUnit + "/";
+        createFile(this.root, this.outDir, savePath, fileName, template);
+    }
 //
 //    public void createUrl()
 //            throws Exception

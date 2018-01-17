@@ -2,18 +2,17 @@ package com.martin;
 
 public class StartCode
 {
-    public static void main(String[] args)
-            throws Exception
+    public static void main(String[] args) throws Exception
     {
         CodeUtil util = new CodeUtil();
         util.createController();
         util.createBean();
         util.createInfo();
-//        util.createSV();
-//        util.createSVImpl();
-//        util.createUrl();
-//        util.createMapper();
-//
+        util.createSV();
+        util.createSVImpl();
+        util.createMapper();
+        util.createMapperXml();
+
 
 //        String s = args[0];
 //        CodeUtil util = new CodeUtil();
