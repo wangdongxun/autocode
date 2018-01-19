@@ -26,7 +26,7 @@ public interface ${model}Mapper {
     /**
     * 更新
     */
-    int upd(${model}Dto dto);
+    int upd(${model}Bean bean);
 
     /**
     * 列表

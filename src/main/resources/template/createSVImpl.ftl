@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ${basePkg}.bean.${bizUnit}.${model}Dean;
+import ${basePkg}.bean.${bizUnit}.${model}Bean;
 import ${basePkg}.dto.${bizUnit}.${model}Dto;
 
 
@@ -26,7 +26,7 @@ public class ${model}ServiceImpl implements ${model}Service {
     * 增加
     */
     @Override
-    public void add(${model}Dto dto) throw Exception{
+    public void add(${model}Dto dto) throws Exception{
         ${model}Bean bean = new ${model}Bean();
         BeanUtils.copyProperties(dto, bean);
         int result=mapper.add(bean);
@@ -38,7 +38,7 @@ public class ${model}ServiceImpl implements ${model}Service {
     /**
     * 更新
     */
-    public void upd(${model}Dto dto) throw Exception{
+    public void upd(${model}Dto dto) throws Exception{
         ${model}Bean bean = new ${model}Bean();
         BeanUtils.copyProperties(dto, bean);
         int result=mapper.upd(bean);
@@ -51,7 +51,7 @@ public class ${model}ServiceImpl implements ${model}Service {
     /**
     * 列表
     */
-    public List<${model}Dean> list(${model}Dto dto) throw Exception{
+    public List<${model}Bean> list(${model}Dto dto) throws Exception{
         return mapper.list(dto);
     }
 }

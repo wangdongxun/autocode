@@ -1,21 +1,16 @@
 package ${basePkg}.${bizUnit}.controller;
 
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.fasterxml.jackson.core.JsonParseException;
 
-import ${basePkg}.dto.ResultInfo;
 import ${basePkg}.controller.BaseController;
+import ${basePkg}.dto.ResultInfo;
 import ${basePkg}.dto.${bizUnit}.${model}Dto;
 import ${basePkg}.service.${bizUnit}.${model}Service;
-import ${basePkg}.tools.JsonUtils;
 
 /**
 * @ClassName: ${model}Controller
@@ -24,19 +19,19 @@ import ${basePkg}.tools.JsonUtils;
 * @date ${curTime}
 */
 @Controller
-public class ${model}Controller extend BaseController{
+public class ${model}Controller extends BaseController{
 
     @Autowired
-    private ${model}Service ${model?lower_case}Service;
+    private ${model}Service ${model?uncap_first}Service;
 
     /**
     * 新增
     **/
     @ResponseBody
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResultInfo add(@RequestBody ${model}Dto dto) {
+    public ResultInfo add(@RequestBody ${model}Dto dto) throws Exception{
         ${model?lower_case}Service.add(dto);
-        return null;
+        return ResultInfo.success();
     }
 
     /**
@@ -44,9 +39,9 @@ public class ${model}Controller extend BaseController{
     **/
     @ResponseBody
     @RequestMapping(value = "/upd", method = RequestMethod.POST)
-    public ResultInfo upd(@RequestBody ${model}Dto dto) {
-        ${model?lower_case}Service.add(dto);
-        return null;
+    public ResultInfo upd(@RequestBody ${model}Dto dto) throws Exception{
+        ${model?lower_case}Service.upd(dto);
+        return ResultInfo.success();
     }
 
     /**
@@ -54,8 +49,7 @@ public class ${model}Controller extend BaseController{
     **/
     @ResponseBody
     @RequestMapping(value = "/list", method = RequestMethod.POST)
-    public ResultInfo list(@RequestBody ${model}Dto dto) {
-        ${model?lower_case}Service.list(dto);
-        return null;
+    public ResultInfo list(@RequestBody ${model}Dto dto) throws Exception{
+        return ResultInfo.success(${model?lower_case}Service.list(dto));
     }
 }

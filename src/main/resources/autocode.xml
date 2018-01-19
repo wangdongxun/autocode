@@ -2,23 +2,23 @@
 <defaults>
     <db>
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.100.22:3306/smart-learn"/>
-        <property name="username" value="root"/>
-        <property name="password" value="mysql123"/>
+        <property name="url" value="jdbc:mysql://192.168.100.22:3306/fadmin"/>
+        <property name="username" value="fadmin"/>
+        <property name="password" value="123456"/>
     </db>
     <needEdit>
         <!--文件输出路径 D:\ideaspace\jusfoun-->
-        <property name="outDir" value="D:\ideaspace\jusfoun\jxsd"/>
+        <property name="outDir" value="D:\ideaspace\jusfoun\fadmin"/>
         <!--作者-->
         <property name="author" value="wdx"/>
-        <property name="basePkg" value="com.jusfoun.jxsd"/>
+        <property name="basePkg" value="com.jusfoun.fadmin"/>
 
         <!--只支持单表表名-->
-        <property name="table" value="tb_user_point"/>
+        <property name="table" value="sys_user"/>
         <!-- eg:CityBean.java 就填 City 驼峰-->
-        <property name="model" value="UserPoint"/>
+        <property name="model" value="SysUser"/>
         <!-- 业务定义，eg:城市信息 -->
-        <property name="bizName" value="用户积分"/>
+        <property name="bizName" value="系统用户"/>
         <!--包名-业务单元-全小写-->
         <property name="bizUnit" value="user"/>
     </needEdit>
