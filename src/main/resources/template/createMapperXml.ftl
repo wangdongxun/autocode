@@ -5,7 +5,7 @@
         <#list columnList as a>${a.columnName}<#if a_has_next>,</#if></#list>
     </sql>
 
-    <insert id="add" parameterType="${basePkg}.bean.${bizUnit}.${model}Dean" >
+    <insert id="add" parameterType="${basePkg}.bean.${bizUnit}.${model}Bean" >
         insert into ${table ? lower_case}
         <trim prefix="(" suffix=")" suffixOverrides="," >
         <#list columnList as a><#if a.isKey='N'>
@@ -23,7 +23,7 @@
         </trim>
     </insert>
 
-    <update id="upd" parameterType="${basePkg}.bean.${bizUnit}.${model}Dean" >
+    <update id="upd" parameterType="${basePkg}.bean.${bizUnit}.${model}Bean" >
         update ${table ? lower_case}
         <set >
         <#list columnList as a><#if a.isKey='N'>
@@ -42,7 +42,7 @@
         </trim>
     </update>
 
-    <select id="list" resultType="${basePkg}.bean.${bizUnit}.${model}Dean" parameterType="${basePkg}.dto.${bizUnit}.${model}Dto" >
+    <select id="list" resultType="${basePkg}.bean.${bizUnit}.${model}Bean" parameterType="${basePkg}.dto.${bizUnit}.${model}Dto" >
         select
         <include refid="Base_Column_List" />
         from ${table ? lower_case}
