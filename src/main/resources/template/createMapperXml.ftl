@@ -33,11 +33,10 @@
         </#if></#list>
         </set>
         <trim prefix="where " suffixOverrides=" and " >
-            <#list columnList as a><#if a.isKey='N'>
+            <#list columnList as a>
                 <if test="${a.displayName} != null" >
                 ${r"#"}{${a.displayName},jdbcType=${a.jdbcType}} and
                 </if>
-                </#if>
             </#list>
         </trim>
     </update>
@@ -47,12 +46,11 @@
         <include refid="Base_Column_List" />
         from ${table ? lower_case}
         <trim prefix="where " suffixOverrides=" and " >
-        <#list columnList as a><#if a.isKey='N'>
-            <if test="${a.displayName} != null" >
-            ${r"#"}{${a.displayName},jdbcType=${a.jdbcType}} and
-            </if>
-        </#if>
-        </#list>
+            <#list columnList as a>
+                <if test="${a.displayName} != null" >
+                ${r"#"}{${a.displayName},jdbcType=${a.jdbcType}} and
+                </if>
+            </#list>
         </trim>
     </select>
 </mapper>
