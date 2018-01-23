@@ -32,10 +32,10 @@
             </if>
         </#if></#list>
         </set>
-        <trim prefix="where " suffixOverrides=" and " >
+        <trim prefix=" where " suffixOverrides=" and " >
             <#list columnList as a>
                 <if test="${a.displayName} != null" >
-                ${r"#"}{${a.displayName},jdbcType=${a.jdbcType}} and
+                ${a.columnName} = ${r"#"}{${a.displayName},jdbcType=${a.jdbcType}} and
                 </if>
             </#list>
         </trim>
